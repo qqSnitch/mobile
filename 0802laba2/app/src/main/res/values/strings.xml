@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">08.02 laba 2</string>
+    <string name="InputNumber">Enter number</string>
+    <string name="func">+-/*</string>
+    <string name="Button_calculate">Calculate</string>
+</resources>
