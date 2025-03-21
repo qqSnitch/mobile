@@ -2,7 +2,7 @@ package com.example.a1002laba3
 
 import androidx.lifecycle.ViewModel
 
-class MainActivityViewModel:ViewModel {
+class MainActivityViewModel:ViewModel() {
     private val questionBank = listOf(
     Question(R.string.question_1,true),
     Question(R.string.question_2, true),

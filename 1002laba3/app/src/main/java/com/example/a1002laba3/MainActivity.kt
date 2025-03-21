@@ -8,8 +8,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.PackageManagerCompat.LOG_TAG
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -41,12 +41,12 @@ class MainActivity : AppCompatActivity() {
         btnTrue.setOnClickListener{
             checkAnswer(true)
         }
-        btnTrue.setOnClickListener{
-            checkAnswer(flase)
+        btnFalse.setOnClickListener{
+            checkAnswer(false)
         }
         nextButton.setOnClickListener{
-            quizViewModel.moveToNext()
-            updateQuestion()
+            viewModel.nextContact()
+            displayCurrentContact()
         }
         nextButton.setOnClickListener{
             quizViewModel.moveToPrev()
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         findViewById<Button>(R.id.btnCheat).setOnClickListener{
-            val intent = Intent(this,CheatActivity::class.java)
+            val intent = Intent(this,MainActivity2::class.java)
             intent.putExtra(EXTRA_ANSWER_IS_TRUE, quizViewModel.currentQuestionAnswer)
             startActivity(intent)
         }
